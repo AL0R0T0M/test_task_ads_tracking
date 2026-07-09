@@ -1,0 +1,276 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f5f7;
+    color: #172b4d;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    color: #091e42;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(9,30,66,.25), 0 0 1px 0 rgba(9,30,66,.31);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    border: 2px solid #dfe1e6;
+    border-radius: 3px;
+    background-color: #fafbfc;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+input:focus, select:focus {
+    background-color: #fff;
+    border-color: #4c9aff;
+    outline: none;
+}
+
+button {
+    background-color: #0079bf;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #026aa7;
+}
+
+.hidden {
+    display: none;
+}
+
+.stream-card {
+    border: 1px solid #dfe1e6;
+    border-radius: 3px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.offers-list {
+    margin-top: 10px;
+}
+
+.offer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background-color: #f4f5f7;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.remove-offer-btn {
+    background-color: #eb5a46;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.remove-offer-btn:hover {
+    background-color: #cf513d;
+}
+
+.notifications-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 320px;
+    z-index: 1000;
+}
+
+.notification {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.4s ease-out forwards;
+}
+
+.notification.fade-out {
+    animation: slideOut 0.4s ease-in forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+.notification.success {
+    background-color: #e3fcef;
+    color: #064;
+}
+
+.notification.error {
+    background-color: #ffeded;
+    color: #ae2a19;
+}
+.editor-layout {
+    display: flex;
+    gap: 20px;
+}
+
+.campaign-list-container {
+    flex: 0 0 250px;
+    max-height: 500px;
+    overflow-y: auto;
+    border-right: 1px solid #dfe1e6;
+    padding-right: 20px;
+}
+
+.campaign-list-item {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.campaign-list-item:hover {
+    background-color: #f4f5f7;
+}
+
+.campaign-list-item.active {
+    background-color: #e4f0f6;
+    font-weight: 600;
+}
+
+#editor-section {
+    flex-grow: 1;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #dfe1e6;
+    text-align: left;
+}
+
+thead {
+    background-color: #f4f5f7;
+}
+
+.stream-header-row td {
+    background-color: #fafbfc;
+    font-weight: bold;
+}
+
+.add-offer-row td {
+    background-color: #f4f5f7;
+}
+
+.changed {
+    background-color: #fff9e6 !important; /* Yellow highlight for changes */
+}
+
+#publish-changes-btn {
+    background-color: #5aac44;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.editor-header h3 {
+    margin: 0;
+}
+
+.input-with-button {
+    display: flex;
+    gap: 10px;
+}
+
+.input-with-button input {
+    flex-grow: 1;
+}
+
+button:disabled {
+    background-color: #a5adba;
+    cursor: not-allowed;
+}
+
+button.loading {
+    position: relative;
+    color: transparent !important;
+}
+
+button.loading::after {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -8px;
+    margin-left: -8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

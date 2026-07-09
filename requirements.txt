@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+requests
+python-dotenv
+SQLAlchemy
+pydantic
+pydantic-settings
+alembic
+jinja2

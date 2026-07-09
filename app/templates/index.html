@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keitaro Campaign Manager</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"/>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        .add-offer-row > td {
+            padding: 4px; 
+        }
+        .choices__inner {
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Менеджер кампаний Keitaro</h1>
+        <div class="card">
+            <h2>1. Создать кампанию</h2>
+            <form id="create-campaign-form">
+                <div class="form-group">
+                    <label for="campaign-name">Название кампании:</label>
+                    <input type="text" id="campaign-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="country-codes">Коды стран (через запятую, напр. US, RU):</label>
+                    <input type="text" id="country-codes" name="country_codes" required>
+                </div>
+                <div class="form-group">
+                    <label for="offer-select-create">Начальный оффер:</label>
+                    <select id="offer-select-create" name="offer_id" required></select>
+                </div>
+                <button type="submit">Создать</button>
+            </form>
+        </div>
+        <div class="card">
+            <div class="editor-layout">
+                <div class="campaign-list-container">
+                    <h2>Кампании</h2>
+                    <div id="campaign-list"></div>
+                </div>
+                <div id="editor-section" class="hidden"></div>
+            </div>
+        </div>
+        <div id="notifications" class="notifications-container"></div>
+    </div>
+
+    <template id="offer-row-template">
+        <tr>
+            <td></td>
+            <td class="share-cell"></td>
+            <td>-</td>
+            <td>-</td>
+            <td class="actions-cell">
+                <button class="remove-offer-btn">&times;</button>
+            </td>
+        </tr>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
